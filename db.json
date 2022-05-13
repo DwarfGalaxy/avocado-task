@@ -1,4 +1,5 @@
-[
+{
+  "tables":[
 { "layout":"Layout1",
 "name":"Ram",
 "capacity":1,
@@ -6,3 +7,5 @@
 "image":"base64image"
 }
 ]
+
+}
