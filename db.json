@@ -1,7 +1,8 @@
 
 {
   "tables":[
-{ "layout":"Layout1",
+{ "id":1,
+  "layout":"Layout1",
 "name":"Ram",
 "capacity":1,
 "status":true,
