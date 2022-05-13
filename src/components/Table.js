@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 
 export default function Table() {
@@ -10,14 +9,14 @@ export default function Table() {
     }, [])
 
     const deleteItem = async (id) => {
-       
-        if(window.confirm("Are you sure? you want to delete this? it cannot be undone")){
-            const deleted = await fetch("https://my-json-server.typicode.com/DwarfGalaxy/avocado-task/tables/" + id, {
+
+        if (window.confirm("Are you sure? you want to delete this? it cannot be undone")) {
+            await fetch("https://my-json-server.typicode.com/DwarfGalaxy/avocado-task/tables/" + id, {
                 method: 'DELETE'
             })
-            setPosts([...posts].filter(x=>x.id!==id))
+            setPosts([...posts].filter(x => x.id !== id))
             alert("Item deleted");
-    
+
         }
 
     }
@@ -27,9 +26,9 @@ export default function Table() {
             <h1>TABLE LIST</h1>
             <hr />
             <div className="row">
-                {posts.length===0&&<div className='p-2 bg-gray'>
+                {posts.length === 0 && <div className='p-2 bg-gray'>
                     NO TABLES YET.
-                    </div>}
+                </div>}
                 {posts.map(post => <div className="my-2 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
                     <div className="card">
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"  >

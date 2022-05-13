@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
@@ -6,20 +6,20 @@ export default function Form() {
     const [name, setName] = useState('')
     const [capacity, setCapacity] = useState(0)
     const [status, setStatus] = useState(true)
-    const [image,setImage] = useState('');
-    const navigate=useNavigate()
-    const [loading,setLoading]=useState(false)
+    const [image, setImage] = useState('');
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
     const submitForm = async (e) => {
         e.preventDefault();
         setLoading(true)
-        const data = await fetch('https://my-json-server.typicode.com/DwarfGalaxy/avocado-task/tables', {
+        await fetch('https://my-json-server.typicode.com/DwarfGalaxy/avocado-task/tables', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id: Math.ceil(Math.random()*99999999),
+                id: Math.ceil(Math.random() * 99999999),
                 layout,
                 name,
                 capacity,
@@ -34,14 +34,14 @@ export default function Form() {
     }
 
 
-    const handlePhoto=(e)=>{
+    const handlePhoto = (e) => {
         var file = e.target.files[0];
         let reader = new FileReader();
         reader.onload = (e) => {
             setImage(e.target.result)
         };
-      reader.readAsDataURL(file);
-}
+        reader.readAsDataURL(file);
+    }
     return (
         <form onSubmit={submitForm}>
             <div className="container border-start my-5 border-3">
@@ -57,9 +57,9 @@ export default function Form() {
                                 value={layout}
                                 onChange={e => setLayout(e.target.value)}
                                 className="btn btn-light w-75 text-start dropdown-toggle" type="button" aria-expanded="false" data-bs-toggle="dropdown">
-                                <option><a className="dropdown-item" href="#">Layout1</a></option>
-                                <option><a className="dropdown-item" href="#">Layout2</a></option>
-                                <option><a className="dropdown-item" href="#">Layout3</a></option>
+                                <option>Layout1</option>
+                                <option>Layout2</option>
+                                <option>Layout3</option>
                             </select>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ export default function Form() {
                     {/* Button */}
                     <div className="container mx-3">
                         <button disabled={loading} type="submit" className='btn mx-2 text-light fw-bold' style={{ backgroundColor: "rgb(22 22 78)" }}>Create Table</button>
-                        <a href="" className='btn bg-danger text-light fw-bold'>Cancel</a>
+                        <a href="/form" className='btn bg-danger text-light fw-bold'>Cancel</a>
                     </div>
                 </div>
             </div>
