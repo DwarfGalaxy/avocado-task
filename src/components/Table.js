@@ -10,6 +10,7 @@ export default function Table() {
     }, [])
 
     const deleteItem = async (id) => {
+        //eslint-disable-line 
         if(confirm("Are you sure? you want to delete this? it cannot be undone")){
             const deleted = await fetch("https://my-json-server.typicode.com/DwarfGalaxy/avocado-task/tables/" + id, {
                 method: 'DELETE'
