@@ -1,0 +1,8 @@
+[
+{ "layout":"Layout1",
+"name":"Ram",
+"capacity":1,
+"status":true,
+"image":"base64image"
+}
+]
