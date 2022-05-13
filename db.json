@@ -1,0 +1,12 @@
+{
+    "tables": [
+        {
+            "id": 1,
+            "layout": "Layout1",
+            "name": "Ram",
+            "capacity": 1,
+            "status": true,
+            "image": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO885+hHgAG9gJcDGVqwAAAAABJRU5ErkJggg=="
+        }
+    ]
+}
